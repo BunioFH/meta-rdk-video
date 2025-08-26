@@ -1,0 +1,16 @@
+Index: git/RDKShell/RDKShell.cpp
+===================================================================
+--- git.orig/RDKShell/RDKShell.cpp
++++ git/RDKShell/RDKShell.cpp
+@@ -3230,6 +3230,11 @@ namespace WPEFramework {
+                 }
+                 const bool visible  = parameters["visible"].Boolean();
+ 
++                if( client == "htmlapp" )
++                {
++                    client = "HtmlApp";
++                }
++
+                 result = setVisibility(client, visible);
+                 // Just realized: we need one more string& param for the the error message in case setScreenResolution() fails internally
+                 // Also, we might not need a "non-wrapper" method at all, nothing prevents us from implementing it right here
